@@ -87,7 +87,7 @@ function rssFeedCallBack(i){
     if(ThisIdx != NextIdx){
         var $pv = dc.getElementById('staticpost');
         if($pv){
-            $pv.style.marginBottom = '0px';
+            $pv.style.height = '0px';
             $pv.style.overflow = 'hidden';
 
             $staticPageListHeight = $pv.offsetHeight||$pv.clientHeight||0;
