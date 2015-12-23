@@ -25,6 +25,7 @@ function randompagepostwidget(json){
   var $pv = document.getElementById('staticpost');
   var $pg = document.getElementById('staticfooter');
   if($pv){
+    $pv.style.backgroundPosition = 'center -4000px';
     runJsonInScript(json,rdmpwPageSetting,'',parseInt(json.feed.openSearch$startIndex.$t)||0,$pv);
     if($pg&&$randomStaticPageTotal<=$randomStaticPageIndex){
       $pg.innerHTML='<center><span style="background:#333"> -- 介紹完畢 -- </span></center>';
@@ -49,6 +50,7 @@ function initialrandompagepost(json){
   } else {
     var $pv = document.getElementById('staticpost');
     if($pv){
+      $pv.style.backgroundPosition = 'center 20px';
       var $pg = document.getElementById('staticfooter');
       if($pg){ $pg.innerHTML='<center><img src="http://farm6.staticflickr.com/5484/14074227287_46821de445_o.gif"/></center>'; }
     }
