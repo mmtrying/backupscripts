@@ -19,7 +19,7 @@ var rdmpwPageSetting = {
   post_order: 'random'
 }
 
-var $randomStaticPageIndex=1, $randomStaticPageArray=null, $randomStaticPageTotal=0;
+var $randomStaticPageIndex=0, $randomStaticPageArray=null, $randomStaticPageTotal=0;
 
 function randompagepostwidget(json){
   var $pv = document.getElementById('staticpost');
@@ -42,8 +42,8 @@ function initialrandompagepost(json){
     for(var rpi = 0; rpi<=$randomStaticPageTotal-1; rpi++){
       $randomStaticPageArray[rpi] = rpi+1;
     };$randomStaticPageArray.sort(function (){return Math.random()-0.5;});
-    var postnumber = Math.min($randomStaticPageTotal,rdmpwPageSetting.post_limit+$randomStaticPageIndex-1);
-    for(var pni = $randomStaticPageIndex-1; pni < postnumber; pni++){
+    var postnumber = Math.min($randomStaticPageTotal,rdmpwPageSetting.post_limit+$randomStaticPageIndex);
+    for(var pni = $randomStaticPageIndex; pni < postnumber; pni++){
       document.write('<script type=\"text/javascript\" src=\"'+rdmpwPageSetting.blog_domain_url+'/feeds/posts/default?orderby=published&alt=json-in-script&max-results=1&start-index='+$randomStaticPageArray[pni]+'&callback=randompagepostwidget"><\/script>');
       $randomStaticPageIndex += 1;
     }
@@ -55,8 +55,8 @@ function initialrandompagepost(json){
       if($pg){ $pg.innerHTML='<center><img src="http://farm6.staticflickr.com/5484/14074227287_46821de445_o.gif"/></center>'; }
     }
     var $s=[];
-    var postnumber = Math.min($randomStaticPageTotal,rdmpwPageSetting.post_limit+$randomStaticPageIndex-1);
-    for(var pni = $randomStaticPageIndex-1; pni < postnumber; pni++){
+    var postnumber = Math.min($randomStaticPageTotal,rdmpwPageSetting.post_limit+$randomStaticPageIndex);
+    for(var pni = $randomStaticPageIndex; pni < postnumber; pni++){
       $s[pni]=document.createElement('script');
       document.body.appendChild($s[pni]);
       $s[pni].type='text/javascript';
