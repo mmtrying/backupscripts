@@ -28,7 +28,7 @@ function randompagepostwidget(json){
     $pv.style.backgroundPosition = 'center -4000px';
     runJsonInScript(json,rdmpwPageSetting,'',parseInt(json.feed.openSearch$startIndex.$t)||0,$pv);
     if($pg&&$randomStaticPageTotal<=$randomStaticPageIndex){
-      $pg.innerHTML='<center><span style="font-size:12px;background:#333;padding:3px 6px;"> -- 介紹完畢 -- </span></center>';
+      $pg.innerHTML='<span style="font-size:12px;background:#333;padding:3px 6px;"> -- 介紹完畢 -- </span>';
     } else if($pg){
       $pg.innerHTML='<a href="javascript:initialrandompagepost()"> &#9660; 載入更多介紹 &#9660; </a>';
     }
@@ -70,6 +70,7 @@ function initialrandompagepost(json){
   var $pg = document.getElementById('staticfooter');
       if($pg){
         $pg.style.border='6px solid transparent';
+        $pg.style.textAlign='center';
       }
 document.write('<script type=\"text/javascript\" src=\"'+rdmpwPageSetting.blog_domain_url+'/feeds/posts/default?alt=json-in-script&max-results=0&callback=initialrandompagepost"><\/script>');
 })();
