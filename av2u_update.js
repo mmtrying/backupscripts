@@ -77,7 +77,7 @@ if(uList) uList.parentNode.id='staticpageindex-'+i;
 if(ThisIdx != NextIdx){
 var $pv = dc.getElementById('staticpost');
 if($pv){
-$pv.style.marginBottom = '0px';
+$pv.style.height = '0px';
 $pv.style.overflow = 'hidden';
 $staticPageListHeight = $pv.offsetHeight||$pv.clientHeight||0;
 if($staticPageListHeight) $pv.style.height = $staticPageListHeight+'px';
