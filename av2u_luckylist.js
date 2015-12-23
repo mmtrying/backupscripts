@@ -67,5 +67,9 @@ function initialrandompagepost(json){
 }
 
 (function(){
+  var $pg = document.getElementById('staticfooter');
+      if($pg){
+        $pg.style.border='6px solid transparent';
+      }
 document.write('<script type=\"text/javascript\" src=\"'+rdmpwPageSetting.blog_domain_url+'/feeds/posts/default?alt=json-in-script&max-results=0&callback=initialrandompagepost"><\/script>');
 })();
