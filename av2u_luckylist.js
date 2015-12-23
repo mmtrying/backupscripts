@@ -5,7 +5,7 @@ var rdmpwPageSetting = {
   list_item_class_name: 'text notpage',
   list_item_container_class_name: 'post-wrapper',
   start_index: 1,
-  post_limit: 2,
+  post_limit: 1,
   show_thumbnail: false,
   show_title: false,
   show_postcontent: true,
