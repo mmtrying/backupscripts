@@ -30,7 +30,7 @@ function randompagepostwidget(json){
     if($pg&&$randomStaticPageTotal<=$randomStaticPageIndex){
       $pg.innerHTML='<span class="endnotice"> -- 介紹完畢 -- </span>';
     } else if($pg){
-      $pg.innerHTML='<a href="javascript:initialrandompagepost()"> &#9660; 載入更多介紹 &#9660; </a>';
+      $pg.innerHTML='<div id="pagination"><a class="gotopage" href="javascript:initialrandompagepost()"> &#9660; 載入更多介紹 &#9660; </a></div>';
     }
   }
 }
