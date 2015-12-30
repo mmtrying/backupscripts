@@ -145,6 +145,6 @@ function addingstaticpagepost($fakeJson){
     $specificLabel = '/-/'+$specificLabel+'/';
     document.write('<script type=\"text/javascript\" src=\"'+pbhpwPageSetting.blog_domain_url+'/feeds/posts/default'+$specificLabel+'?orderby='+pbhpwPageSetting.post_order+'&alt=json-in-script&max-results='+pbhpwPageSetting.post_limit+'&start-index='+((pbhpwPageSetting.post_limit*((parseInt(getStaticListingPageIndex())||1)-1))+pbhpwPageSetting.start_index)+'&callback=staticpagepostwidget"><\/script>');
   } else {
-    alert('Error occurred. Please report to the administrator if you have any problem.");
+    alert('Error occurred. Please report to the administrator if you have any problem.');
   }
 })();
