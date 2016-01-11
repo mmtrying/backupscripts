@@ -1,5 +1,5 @@
 //Updated Post Widget page setting
-var pbhpwPageSetting = {
+var staticPageSetting = {
   blog_domain_url: 'http://av-2u.blogspot.com',
   list_item_class_name: 'text notpage',
   list_item_container_class_name:  'post-wrapper',
@@ -18,6 +18,7 @@ var pbhpwPageSetting = {
   post_order: 'published'
 }
 
+var $staticNumberOfMainPager = 2;
 var $staticPageIndexRecord = [0,0];
 var $staticPageListHeight = 0;
 
@@ -45,9 +46,9 @@ function getStaticListingPageIndex(){
 function createStaticPagePagination(json){
     var $pg = document.getElementById('staticfooter');
     if($pg){
-          var totalpage = Math.ceil((parseInt(json.feed.openSearch$totalResults.$t)||0)/pbhpwPageSetting.post_limit);
+          var totalpage = Math.ceil((parseInt(json.feed.openSearch$totalResults.$t)||0)/staticPageSetting.post_limit);
           var idx = getStaticListingPageIndex();
-          var cpData = calculatePage(idx,totalpage,pbhpwPageSetting.post_limit);
+          var cpData = calculatePage(idx,totalpage,$staticNumberOfMainPager);
           $staticPageIndexRecord[0] = idx;
 
           var h ='<div id="pagination">';
@@ -105,7 +106,7 @@ function rssFeedCallBack(i){
         var s=dc.createElement('script');
         dc.body.appendChild(s);
         s.type='text/javascript';
-        s.src=pbhpwPageSetting.blog_domain_url+'/feeds/posts/default?orderby='+pbhpwPageSetting.post_order+'&alt=json-in-script&max-results=0&start-index=1&callback=addingstaticpagepost';
+        s.src=staticPageSetting.blog_domain_url+'/feeds/posts/default?orderby='+staticPageSetting.post_order+'&alt=json-in-script&max-results=0&start-index=1&callback=addingstaticpagepost';
     }
 }
 
@@ -113,9 +114,9 @@ function rssFeedCallBack(i){
 function staticpagepostwidget(json){
   var $jL = parseInt(json.feed.openSearch$totalResults.$t)||0;
   var $pv = document.getElementById('staticpost');
-  if($pv&&$jL>=pbhpwPageSetting.start_index){
+  if($pv&&$jL>=staticPageSetting.start_index){
     $pv.style.backgroundPosition = 'center -4000px';
-    runJsonInScript(json,pbhpwPageSetting,'','',$pv);
+    runJsonInScript(json,staticPageSetting,'','',$pv);
     if($staticPageListHeight){
       $pv.style.height= 'auto';
       $pv.style.overflow = 'visible';
@@ -130,9 +131,9 @@ function addingstaticpagepost($fakeJson){
     var $s=$d.createElement('script');
     $d.body.appendChild($s);
     $s.type='text/javascript';
-    $s.src=pbhpwPageSetting.blog_domain_url+'/feeds/posts/default?orderby='+pbhpwPageSetting.post_order+'&alt=json-in-script&max-results='+pbhpwPageSetting.post_limit+'&start-index='+((pbhpwPageSetting.post_limit*((parseInt($staticPageIndexRecord[1])||1)-1))+pbhpwPageSetting.start_index)+'&callback=staticpagepostwidget';
+    $s.src=staticPageSetting.blog_domain_url+'/feeds/posts/default?orderby='+staticPageSetting.post_order+'&alt=json-in-script&max-results='+staticPageSetting.post_limit+'&start-index='+((staticPageSetting.post_limit*((parseInt($staticPageIndexRecord[1])||1)-1))+staticPageSetting.start_index)+'&callback=staticpagepostwidget';
 }
 
 (function(){
-document.write('<script type=\"text/javascript\" src=\"'+pbhpwPageSetting.blog_domain_url+'/feeds/posts/default?orderby='+pbhpwPageSetting.post_order+'&alt=json-in-script&max-results='+pbhpwPageSetting.post_limit+'&start-index='+((pbhpwPageSetting.post_limit*((parseInt(getStaticListingPageIndex())||1)-1))+pbhpwPageSetting.start_index)+'&callback=staticpagepostwidget"><\/script>');
+document.write('<script type=\"text/javascript\" src=\"'+staticPageSetting.blog_domain_url+'/feeds/posts/default?orderby='+staticPageSetting.post_order+'&alt=json-in-script&max-results='+staticPageSetting.post_limit+'&start-index='+((staticPageSetting.post_limit*((parseInt(getStaticListingPageIndex())||1)-1))+staticPageSetting.start_index)+'&callback=staticpagepostwidget"><\/script>');
 })();
