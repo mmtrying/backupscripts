@@ -79,14 +79,10 @@ function runTumblrJson($json,$setting){
 
             h += '<div class="body-text">';
             if(j.posts[i].type == 'regular'){
-                h += '<div class="body-text">';
                 if(j.posts[i]['regular-body']){
                     h += j.posts[i]['regular-body'];
                 }
-                h += '</div>';
             }
-
-
             if(j.posts[i].type == 'photo'){
             }
             if(j.posts[i].type == 'quote'){
