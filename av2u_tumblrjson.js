@@ -128,27 +128,6 @@ function runTumblrJson($json,$setting){
 
 
 
-
-            h += '<div class="postingfooter">';
-
-
-            h += '<div class="post-controls" id="post_'+j.posts[i].id+'">';
-            h += '<div class="attribution-tags">';
-            h += '<ul class="feedback-control">';
-            if(j.posts[i]['url-with-slug']){
-              h += '<li title="本片專頁" class="videopostpage"><a class="feedback-item videohomebutton" href="'+j.posts[i]['url-with-slug']+'"><span>Post-Home</span></a></li>';
-            }
-            if(j.posts[i].id&&j.posts[i]['reblog-key']){
-              h += '<li title="tumblr轉貼" class="referpost"><a class="feedback-item reblogbutton" target="_blank" href="/reblog/'+j.posts[i].id+'/'+j.posts[i]['reblog-key']+'"><span>Reblog-Post</span></a></li>';
-            }
-            h += '</ul>';
-            h += '</div>';
-            h += '</div>';
-
-
-
-
-
             h += '<div class="postingfooter">';
 
 
