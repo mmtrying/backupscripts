@@ -200,6 +200,7 @@ function runTumblrJson($json,$setting){
             h += '</div>';
 			
             if(h){
+            	d.getElementById('testingtext').value +=h;
                 if(aElmUL){
                     wLi=d.createElement('li');
                     wLi.className = cnLi;
