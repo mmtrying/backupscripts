@@ -1,3 +1,4 @@
+var numberFeedPerPage = 80;
 (function(){
   var iThis = parseInt(getparameter('page')||0)||0;
   var sT = Math.ceil((parseInt(numberFeedPerPage||0)||0)/50);
