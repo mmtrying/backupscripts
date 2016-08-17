@@ -1,4 +1,3 @@
-
 var av2u_feedSetting = {
   list_item_class_name: '',
   append_to_ul_element: null,
@@ -187,5 +186,3 @@ function runTumblrJson($json,$setting){
     }
   }
 }
-runTumblrJson(tumblr_api_read,av2u_feedSetting);
-
