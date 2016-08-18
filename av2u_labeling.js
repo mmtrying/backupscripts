@@ -9,6 +9,7 @@ var thisPageLabel = '';
     if(u.indexOf('/label?=')!=-1){
       thisPageLabel = u.split('/label?=')[1];
       if(u.indexOf('&')!=-1) thisPageLabel = thisPageLabel.split('&')[0];
+      thisPageLabel=encodeURIComponent(thisPageLabel)
     }
   }
 })();
