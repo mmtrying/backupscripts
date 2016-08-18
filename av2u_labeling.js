@@ -24,7 +24,7 @@ var $totalpost = $json?parseInt($json['posts-total']||0):0;
       dc.write('<div class="nolabel">Sorry! There is none of post found for the tag.</div>');
   }
   var dc = document, iThis = parseInt(getparameter('page')||1)||1;
-  var n = parseInt(numberFeedPerPage||0)||0
+  var n = parseInt(numberFeedPerPage||0)||0;
   var r = $totalpost-(n*(iThis-1)), sT = Math.ceil(r/50);
   if(r>0){
     for(var i=1;i<=sT;i++){
