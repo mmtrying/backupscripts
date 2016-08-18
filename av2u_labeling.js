@@ -11,6 +11,7 @@ var thisPageLabel = '';
       if(u.indexOf('&')!=-1) thisPageLabel = thisPageLabel.split('&')[0];
       thisPageLabel=encodeURIComponent(thisPageLabel)
     }
+    //d.write('<script type="text/javascript" src="/api/read/json?start=0&num=0'+(thisPageLabel?('&tagged='+thisPageLabel):'')+'"></script>');
   }
 })();
 
