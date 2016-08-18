@@ -9,7 +9,7 @@ var av2u_feedSetting = {
   //^array for 12 strings:: default as ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
   expression_weekday: ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
   //^array for 7 strings:: default as ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
-  tagging_staticpage: '/tagging'
+  tagging_staticpage: '/label'
   //^string:: default normal tagging as no string, but can assign staticpage tagged by parameter, eg: '/label'.
 }
 
@@ -110,7 +110,7 @@ function runTumblrJson($json,$setting){
                     if(tempTags.length>0){
                         for(var n=0;n<tempTags.length;n++){
                             if(tempTags[n]){
-                                h += '<li><div class="tagouter"><div class="taginner"><a target="_blank" href="'+((tagPage=='')?'/tagged/':(tagPage+'?lb='))+encodeURIComponent(tempTags[n])+'" class="tag">'+tempTags[n]+'</a></div></div></li>';
+                                h += '<li><div class="tagouter"><div class="taginner"><a target="_blank" href="'+((tagPage=='')?'/tagged/':(tagPage+'?='))+encodeURIComponent(tempTags[n])+'" class="tag">'+tempTags[n]+'</a></div></div></li>';
                             }
                         }
                     }
