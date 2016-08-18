@@ -3,9 +3,9 @@ var numberFeedPerPage = 80;
 
 var thisPageLabel = '';
 (function(){
-  var d = document, u = decodeURIComponent(d.URL);
   var a = (location||window.location).pathname;
   if(a.indexOf('/label')==0){
+    var d = document, u = decodeURIComponent(d.URL);
     if(u.indexOf('/label?=')!=-1){
       thisPageLabel = u.split('/label?=')[1];
       if(u.indexOf('&')!=-1) thisPageLabel = thisPageLabel.split('&')[0];
@@ -20,10 +20,11 @@ var $json = tumblr_api_read;
 var $totalpost = $json?parseInt($json['posts-total']||0):0;
 
 (function(){
+  var dc = document;
   if(thisPageLabel==''){
       dc.write('<div class="nolabel">Sorry! There is none of post found for the tag.</div>');
   }
-  var dc = document, iThis = parseInt(getparameter('page')||1)||1;
+  var iThis = parseInt(getparameter('page')||1)||1;
   var n = parseInt(numberFeedPerPage||0)||0;
   var r = $totalpost-(n*(iThis-1)), sT = Math.ceil(r/50);
   if(r>0){
