@@ -19,6 +19,9 @@ var $json = tumblr_api_read;
 var $totalpost = $json?parseInt($json['posts-total']||0):0;
 
 (function(){
+  if(thisPageLabel==''){
+      dc.write('<div class="nolabel">Sorry! There is none of post found for the tag.</div>');
+  }
   var dc = document, iThis = parseInt(getparameter('page')||1)||1;
   var n = parseInt(numberFeedPerPage||0)||0
   var r = $totalpost-(n*(iThis-1)), sT = Math.ceil(r/50);
@@ -31,4 +34,3 @@ var $totalpost = $json?parseInt($json['posts-total']||0):0;
     dc.write('<div>Sorry! No more page is existed. Please report to us for any problems.</div>');
   }
 })();
-
