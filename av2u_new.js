@@ -56,7 +56,7 @@ function createStaticPagePagination(json){
           h+='<span>';
           if(totalpage>0){
             h+='<span class="infopage">&#31532;'+idx+'&#38913;</span> ';
-            if(idx>1){h+='<a class="sidepage" title="&#19978;&#19968;&#38913;" href="#staticpageindex-'+(idx-1)+'" onclick="rssFeedCallBack('+(idx+1)+')">' +pageNaviConf.prevText+'</a>'}
+            if(idx>1){h+='<a class="sidepage" title="&#19978;&#19968;&#38913;" href="#staticpageindex-'+(idx-1)+'" onclick="rssFeedCallBack('+(idx-1)+')">' +pageNaviConf.prevText+'</a>'}
             if(cpData[0]>1){h+='<a class="gotopage" href="#staticpageindex-1" onclick="rssFeedCallBack(1)">1</a>'}
             h+=(cpData[0]>2)?'<span class="pagegap">&hellip;</span>':'';
             for(var pi=cpData[0];pi<=cpData[1];pi++){
