@@ -19,7 +19,7 @@ function getparameter(pmtr,sptr1,sptr2,cUrl){
 function setparameter(pmtr,nValue,sptr1,sptr2,cUrl){
   var u = (cUrl||document.URL), s1 = (sptr1||'?'), s2 = (sptr2===''?'':(sptr2||'#'));
   var v = nValue||'', k = (pmtr||'').replace(/(^\s+|\s+$)/g,'')+'=';
-  if(!k||!v) return u;
+  if(!k) return u;
   var uP = u.split(s1)[1]||'';
   if(uP&&s2) uP = uP.split(s2)[0];
   var nP = uP.replace(/(^\s+|\s+$)/g,'');
